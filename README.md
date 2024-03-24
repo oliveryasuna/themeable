@@ -150,8 +150,6 @@ The `sx` prop supports the following aliases:
 | `fg`   | `color`                       |
 | `bg`   | `backgroundColor`             |
 
-```javascript
-
 ## Development
 
 | Module       | Description                       |
