@@ -6,24 +6,20 @@ import {Themeable} from './Themeable';
 
 const jsx = (<Props>(type: React.ElementType<Props>, props: Props, key?: string): ThemeableJSX.Element => {
   if(!props || (typeof props !== 'object') || !('sx' in props)) {
-    // @ts-expect-error: TS2339 because IDK.
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return ReactJSXRuntime.jsx(type, props, key);
   }
 
-  // @ts-expect-error: TS2339 because IDK.
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return ReactJSXRuntime.jsx(Themeable, createThemeableProps(type, props), key);
 });
 
 const jsxs = (<Props>(type: React.ElementType<Props>, props: Props, key?: string): ThemeableJSX.Element => {
   if(!props || (typeof props !== 'object') || !('sx' in props)) {
-    // @ts-expect-error: TS2339 because IDK.
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return ReactJSXRuntime.jsxs(type, props, key);
   }
 
-  // @ts-expect-error: TS2339 because IDK.
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return ReactJSXRuntime.jsxs(Themeable, createThemeableProps(type, props), key);
 });

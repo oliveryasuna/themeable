@@ -154,7 +154,6 @@ The `sx` prop supports the following aliases:
 
 | Module       | Description                       |
 |--------------|-----------------------------------|
-| babel-plugin | Experimental Babel plugin.        |
 | context      | Theme context and related hooks.  |
 | css          | CSS types and utilities.          |
 | runtime      | JSX pragma and related utilities. |
