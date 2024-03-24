@@ -166,4 +166,4 @@ The `sx` prop supports the following aliases:
 
 # Acknowledgements
 
-* Inspired by [Theme UI](https://theme-ui.com/) and [Emotion](https://emotion.sh/).
+* Inspired by [Theme UI](https://theme-ui.com/) and [Emotion](https://emotion.sh/). Some code used.
