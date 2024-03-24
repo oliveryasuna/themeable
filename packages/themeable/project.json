@@ -1,0 +1,53 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "themeable",
+  "sourceRoot": "packages/themeable/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "main": "packages/themeable/src/index.ts",
+        "outputPath": "dist/packages/themeable",
+        "tsConfig": "packages/themeable/tsconfig.lib.json",
+        "additionalEntryPoints": [
+          "packages/themeable/src/jsx-runtime.ts",
+          "packages/themeable/src/jsx-dev-runtime.ts"
+        ],
+        "generateExportsField": true,
+        "project": "packages/themeable/package.json",
+        "compiler": "tsc",
+        "external": ["react"],
+        "format": ["cjs", "esm"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/themeable/**/*.ts",
+          "packages/themeable/package.json",
+          "packages/themeable/project.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/themeable/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

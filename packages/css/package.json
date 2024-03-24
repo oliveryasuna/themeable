@@ -1,0 +1,9 @@
+{
+  "name": "@oliveryasuna/themeable-css",
+  "version": "1.0.0",
+  "author": "Oliver Yasuna",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "csstype": "^3.1.3"
+  }
+}

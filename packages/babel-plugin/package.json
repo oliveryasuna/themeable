@@ -1,0 +1,15 @@
+{
+  "name": "@oliveryasuna/themeable-babel-plugin",
+  "version": "1.0.0",
+  "author": "Oliver Yasuna",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/parser": "^7.24.1",
+    "@oliveryasuna/themeable-runtime": "^1.0.0",
+    "tslib": "^2.6.2"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.24.0"
+  }
+}
