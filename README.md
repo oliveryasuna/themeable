@@ -162,3 +162,7 @@ The `sx` prop supports the following aliases:
 | utils        | Miscellaneous utilities.          |
 
 [//]: # (TODO: Add more details.)
+
+# Acknowledgements
+
+* Inspired by [Theme UI](https://theme-ui.com/) and [Emotion](https://emotion.sh/).
