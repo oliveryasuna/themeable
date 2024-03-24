@@ -127,6 +127,31 @@ const App = () => (
 );
 ```
 
+The `sx` prop supports the following aliases:
+
+
+| Alias  | Properties                    |
+|--------|-------------------------------|
+| `m`    | `margin`                      |
+| `mt`   | `marginTop`                   |
+| `mr`   | `marginRight`                 |
+| `mb`   | `marginBottom`                |
+| `ml`   | `marginLeft`                  |
+| `mx`   | `marginLeft`, `marginRight`   |
+| `my`   | `marginTop`, `marginBottom`   |
+| `p`    | `padding`                     |
+| `pt`   | `paddingTop`                  |
+| `pr`   | `paddingRight`                |
+| `pb`   | `paddingBottom`               |
+| `pl`   | `paddingLeft`                 |
+| `px`   | `paddingLeft`, `paddingRight` |
+| `py`   | `paddingTop`, `paddingBottom` |
+| `size` | `width`, `height`             |
+| `fg`   | `color`                       |
+| `bg`   | `backgroundColor`             |
+
+```javascript
+
 ## Development
 
 | Module       | Description                       |
