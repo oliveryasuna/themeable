@@ -61,7 +61,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-environment-node": "^29.7.0",
     "nx": "18.1.2",
-    "ts-jest": "^29.1.1",
+    "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "type-fest": "^4.9.0",
     "typescript": "^5.3.3"
