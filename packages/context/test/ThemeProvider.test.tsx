@@ -1,8 +1,10 @@
 import React, {useContext} from 'react';
-import {ThemeContext, ThemeProvider} from '@oliveryasuna/themeable-context';
+import {createThemeContext, ThemeProvider} from '@oliveryasuna/themeable-context';
 import {render, screen} from '@testing-library/react';
 
 describe('ThemeProvider component', ((): void => {
+  const ThemeContext = createThemeContext();
+
   const ThemeConsumerComponent = ((): React.ReactNode => {
     const theme = useContext(ThemeContext);
     return (<div data-testid="theme-consumer">{JSON.stringify(theme)}</div>);

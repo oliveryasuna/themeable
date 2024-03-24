@@ -1,5 +1,5 @@
+export * from './create-theme-context';
 export * from './ThemeContext.type';
-export * from './ThemeContext';
 export * from './ThemeProvider.props';
 export * from './ThemeProvider';
 export * from './use-theme';

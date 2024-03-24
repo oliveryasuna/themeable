@@ -1,8 +1,10 @@
 import type {ThemeContextType} from './ThemeContext.type';
 import React from 'react';
-import {ThemeContext} from './ThemeContext';
+import type {DefaultTheme} from '@oliveryasuna/themeable-theme';
+import {createThemeContext} from './create-theme-context';
 
-const useTheme = ((): ThemeContextType => React.useContext<ThemeContextType>(ThemeContext));
+const useTheme = (<TTheme extends Record<string, any> = DefaultTheme>(): ThemeContextType<TTheme> =>
+    React.useContext<ThemeContextType<TTheme>>(createThemeContext<TTheme>()));
 
 export {
   useTheme

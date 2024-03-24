@@ -1,6 +1,6 @@
-import type {Theme} from '@oliveryasuna/themeable-theme';
+import type {DefaultTheme} from '@oliveryasuna/themeable-theme';
 
-type ThemeProviderProps = {theme: Theme};
+type ThemeProviderProps<TTheme extends Record<string, any> = DefaultTheme> = {theme: TTheme};
 
 export type {
   ThemeProviderProps

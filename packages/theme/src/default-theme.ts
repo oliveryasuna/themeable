@@ -2,7 +2,7 @@ import type {Scale} from './scale';
 import type CSS from 'csstype';
 import type {TLength} from '@oliveryasuna/themeable-css';
 
-type Theme = {
+type DefaultTheme = {
   borders?: Scale<CSS.Property.Border<NonNullable<unknown>>>,
   borderStyles?: Scale<CSS.Property.Border<NonNullable<unknown>>>,
   borderWidths?: Scale<CSS.Property.BorderWidth<TLength>>,
@@ -20,5 +20,5 @@ type Theme = {
 };
 
 export type {
-  Theme
+  DefaultTheme
 };

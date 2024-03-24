@@ -1,9 +1,9 @@
 import {describe, expect, test} from '@jest/globals';
-import type {Theme} from '@oliveryasuna/themeable-theme';
+import type {DefaultTheme} from '@oliveryasuna/themeable-theme';
 import {css} from '@oliveryasuna/themeable-theme';
 
 describe('css', ((): void => {
-  const theme: Theme = {
+  const theme: DefaultTheme = {
     sizes: {
       sm: '16px',
       md: '32px',

@@ -1,6 +1,6 @@
-import type {Theme} from '@oliveryasuna/themeable-theme';
+import type {DefaultTheme} from '@oliveryasuna/themeable-theme';
 
-type ThemeContextType = Theme;
+type ThemeContextType<TTheme extends Record<string, any> = DefaultTheme> = TTheme;
 
 export type {
   ThemeContextType

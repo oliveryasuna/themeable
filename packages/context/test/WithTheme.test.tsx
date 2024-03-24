@@ -1,7 +1,7 @@
 import {render, screen} from '@testing-library/react';
 import {ThemeProvider, WithTheme, withTheme} from '../src';
 import React, {forwardRef} from 'react';
-import type {Theme} from '@oliveryasuna/themeable-theme';
+import type {DefaultTheme} from '@oliveryasuna/themeable-theme';
 
 describe('withTheme function', ((): void => {
   test('provides theme to wrapped component', ((): void => {
@@ -37,7 +37,7 @@ describe('WithTheme component', ((): void => {
   test('provides theme to children', ((): void => {
     render(
         <ThemeProvider theme={{colors: {primary: 'red'}}}>
-          <WithTheme>{(theme: Theme): React.ReactNode => (<div data-testid="test-id" style={{color: (theme.colors as any)['primary']}}/>)}</WithTheme>
+          <WithTheme>{(theme: DefaultTheme): React.ReactNode => (<div data-testid="test-id" style={{color: (theme.colors as any)['primary']}}/>)}</WithTheme>
         </ThemeProvider>
     );
 

@@ -4,11 +4,11 @@
   "author": "Oliver Yasuna",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@oliveryasuna/themeable-context": "1.0.0",
-    "@oliveryasuna/themeable-css": "1.0.0",
-    "@oliveryasuna/themeable-runtime": "1.0.0",
-    "@oliveryasuna/themeable-theme": "1.0.0",
-    "@oliveryasuna/themeable-utils": "1.0.0"
+    "@oliveryasuna/themeable-context": "^1.0.0",
+    "@oliveryasuna/themeable-css": "^1.0.0",
+    "@oliveryasuna/themeable-runtime": "^1.0.0",
+    "@oliveryasuna/themeable-theme": "^1.0.0",
+    "@oliveryasuna/themeable-utils": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0"

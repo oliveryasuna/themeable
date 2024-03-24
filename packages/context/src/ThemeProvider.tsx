@@ -1,11 +1,14 @@
 import React from 'react';
-import {ThemeContext} from './ThemeContext';
 import {createCacheWithTheme} from './utils';
 import type {ThemeProviderProps} from './ThemeProvider.props';
 import {useTheme} from './use-theme';
+import type {DefaultTheme} from '@oliveryasuna/themeable-theme';
+import {createThemeContext} from './create-theme-context';
 
-const ThemeProvider = ((props: React.PropsWithChildren<ThemeProviderProps>): React.ReactNode => {
-  let theme = useTheme();
+const ThemeProvider = (<TTheme extends Record<string, any> = DefaultTheme>(props: React.PropsWithChildren<ThemeProviderProps<TTheme>>): React.ReactNode => {
+  const ThemeContext = createThemeContext<TTheme>();
+
+  let theme = useTheme<TTheme>();
 
   if(props.theme !== theme) {
     theme = createCacheWithTheme(theme)(props.theme);

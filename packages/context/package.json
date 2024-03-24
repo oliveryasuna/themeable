@@ -4,8 +4,8 @@
   "author": "Oliver Yasuna",
   "license": "BSD-3-Clause",
   "dependencies": {
-    "@oliveryasuna/themeable-theme": "1.0.0",
-    "@oliveryasuna/themeable-utils": "1.0.0",
+    "@oliveryasuna/themeable-theme": "^1.0.0",
+    "@oliveryasuna/themeable-utils": "^1.0.0",
     "hoist-non-react-statics": "^3.3.2"
   },
   "peerDependencies": {

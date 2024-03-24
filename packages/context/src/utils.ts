@@ -1,7 +1,9 @@
-import type {Theme} from '@oliveryasuna/themeable-theme';
 import {weakMemoize} from '@oliveryasuna/themeable-utils';
 
-const getTheme = ((outerTheme: Theme, theme: (Theme | ((theme: Theme) => Theme))): Theme => {
+const getTheme = (<TTheme extends Record<string, any>>(
+    outerTheme: TTheme,
+    theme: (TTheme | ((outerTheme: TTheme) => TTheme))
+): TTheme => {
   if(typeof theme === 'function') {
     return theme(outerTheme);
   } else {
@@ -9,8 +11,8 @@ const getTheme = ((outerTheme: Theme, theme: (Theme | ((theme: Theme) => Theme))
   }
 });
 
-const createCacheWithTheme = weakMemoize((outerTheme: Theme): ((theme: Theme) => Theme) =>
-    weakMemoize((theme: Theme): Theme => getTheme(outerTheme, theme)));
+const createCacheWithTheme = weakMemoize(<TTheme extends Record<string, any>>(outerTheme: TTheme): ((theme: TTheme) => TTheme) =>
+    weakMemoize((theme: TTheme): TTheme => getTheme(outerTheme, theme)));
 
 export {
   getTheme,

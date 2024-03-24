@@ -1,7 +1,7 @@
 import React from 'react';
 import hoistNonReactStatics from 'hoist-non-react-statics';
 import {useTheme} from './use-theme';
-import type {Theme} from '@oliveryasuna/themeable-theme';
+import type {DefaultTheme} from '@oliveryasuna/themeable-theme';
 
 const withTheme = (<T, Props extends NonNullable<unknown>>(
     Component: React.ComponentType<Props>
@@ -30,7 +30,8 @@ const withTheme = (<T, Props extends NonNullable<unknown>>(
 //   return WithTheme;
 // });
 
-const WithTheme = (({children}: {children: ((theme: Theme) => React.ReactNode)}): React.ReactNode => children(useTheme()));
+const WithTheme = (<TTheme extends Record<string, any> = DefaultTheme>({children}: {children: ((theme: TTheme) => React.ReactNode)}): React.ReactNode =>
+    children(useTheme()));
 
 export {
   withTheme,

@@ -1,7 +1,6 @@
 import type {CssPropertyAliasDefinitions, ThemeableCssProperties} from '@oliveryasuna/themeable-css';
 import {CSS_PROPERTY_ALIAS_DEFINITION_KEYS, CSS_PROPERTY_ALIAS_DEFINITIONS} from '@oliveryasuna/themeable-css';
 import {getValue} from './get-value';
-import type {Theme} from './theme';
 import type React from 'react';
 
 const getAliasKeys = ((alias: (keyof CssPropertyAliasDefinitions)): (keyof React.CSSProperties)[] => {
@@ -14,8 +13,8 @@ const getAliasKeys = ((alias: (keyof CssPropertyAliasDefinitions)): (keyof React
   }
 });
 
-const css = ((args: ThemeableCssProperties) =>
-    ((theme: Theme): React.CSSProperties =>
+const css = (<TTheme extends Record<string, any>>(args: ThemeableCssProperties) =>
+    ((theme: TTheme): React.CSSProperties =>
         Object.entries(args)
             .reduce(
                 // TODO: Better typing.
