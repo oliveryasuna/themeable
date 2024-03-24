@@ -5,6 +5,8 @@ Simplified theme management for your React applications.
 
 ## Installation
 
+**NOT YET PUBLISHED!**
+
 ```shell
 npm install @oliveryasuna/themeable
 ```
