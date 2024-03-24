@@ -44,16 +44,84 @@ const App = () => (
 
 ## Guide
 
-[//]: # (TODO: Add guide.)
+[//]: # (TODO: Anything else to guide?)
 
-### API
+### TypeScript
 
-#### `ThemeProvider`
+The default theme object is of type `DefaultTheme`:
+
+```typescript
+type DefaultTheme = {
+  borders?: Scale<CSS.Property.Border<NonNullable<unknown>>>,
+  borderStyles?: Scale<CSS.Property.Border<NonNullable<unknown>>>,
+  borderWidths?: Scale<CSS.Property.BorderWidth<TLength>>,
+  borderRadii?: Scale<CSS.Property.BorderRadius<TLength>>,
+  colors?: Scale<CSS.Property.Color>,
+  fonts?: Scale<CSS.Property.FontFamily>,
+  fontSizes?: Scale<CSS.Property.FontSize<TLength>>,
+  fontWeights?: Scale<CSS.Property.FontWeight>,
+  letterSpacings?: Scale<CSS.Property.LetterSpacing<TLength>>,
+  lineHeights?: Scale<CSS.Property.LineHeight<TLength>>,
+  shadows?: Scale<CSS.Property.BoxShadow>,
+  sizes?: Scale<CSS.Property.Width<NonNullable<unknown>> | CSS.Property.Height<NonNullable<unknown>>>,
+  space?: Scale<CSS.Property.Margin<NonNullable<unknown>>>,
+  zIndices?: Scale<CSS.Property.ZIndex>
+};
+```
+
+### Controlling the Theme Type
+
+Unlike similar libraries, you have complete control over the type of
+your theme object.
+
+```typescript jsx
+type MyTheme = {
+  colors: {
+    primary: string,
+    secondary: string
+  };
+};
+
+const App = () => (
+  <ThemeProvider<MyTheme> theme={{
+    colors: {
+      primary: 'hotpink',
+      secondary: 'rebeccapurple',
+    },
+  }}>
+    <Root/>
+  </ThemeProvider>
+);
+
+const Root = () => {
+  const theme = useTheme<MyTheme>();
+
+  return (
+    <h1 style={{color: theme.colors.primary}}>Hello, World!</h1>
+  );
+};
+```
+
+`WithTheme` also supports this pattern:
+
+```typescript jsx
+const Heading = () => (
+  <WithTheme<MyTheme>
+    {theme => (
+      <h1 style={{color: theme.colors.primary}}>Hello, World!</h1>
+    )}
+  />
+);
+```
+
+## API
+
+### `ThemeProvider`
 
 The `ThemeProvider` component is used to provide a theme to your application.
 It should be used at the root of your application.
 
-```javascript
+```jsx
 import {ThemeProvider} from '@oliveryasuna/themeable';
 
 const theme = {
@@ -69,12 +137,12 @@ const App = () => (
 );
 ```
 
-#### `WithTheme`
+### `WithTheme`
 
 The `WithTheme` component is used for contextual access to the theme in your
 components.
 
-```javascript
+```jsx
 import {WithTheme} from '@oliveryasuna/themeable';
 
 const Heading = () => (
@@ -86,12 +154,12 @@ const Heading = () => (
 );
 ```
 
-#### `useTheme`
+### `useTheme`
 
 The `useTheme` hook is used for hook-based access to the theme in your
 components.
 
-```javascript
+```jsx
 import { useTheme } from '@oliveryasuna/themeable';
 
 const Heading = () => {
@@ -103,7 +171,7 @@ const Heading = () => {
 };
 ```
 
-#### `sx`
+### `sx`
 
 The `sx` prop is used to apply styles to your components.
 
@@ -113,7 +181,7 @@ However, unlike Emotion, no `sx` properties map to specific theme properties.
 Rather, you can use the `$` prefix to reference theme properties as they are
 defined in your theme.
 
-```javascript
+```jsx
 import { ThemeProvider } from '@oliveryasuna/themeable';
 
 const theme = {
