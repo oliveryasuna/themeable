@@ -1,0 +1,16 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "start-here",
+  "sourceRoot": "examples/start-here/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "examples/start-here",
+        "command": "vite"
+      }
+    }
+  },
+  "tags": []
+}
