@@ -30,7 +30,7 @@
     "chore:unused-dependencies": "nx generate @trumbitta/nx-plugin-unused-deps:check --no-interactive"
   },
   "dependencies": {
-    "@babel/runtime": "^7.24.1",
+    "@babel/runtime": "^7.28.4",
     "csstype": "^3.1.3",
     "deepmerge": "^4.3.1",
     "hoist-non-react-statics": "^3.3.2",
